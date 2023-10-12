@@ -43,6 +43,8 @@ button {
 		<button onclick="addEnd()">Add end</button>
         <button onclick="addFront()">Add Front</button>
         <button onclick="remove()">Remove</button>
+
+        <button onclick="swap()">swap</button>
 	
 	
 </body>
@@ -75,5 +77,20 @@ button {
       let container = document.getElementById("target");
       container.insertBefore(element, container.firstChild);
     }
+
+    function swap() {
+	  let mergerItems = document.getElementsByClassName("merger");
+		let container = document.getElementById("target");
+		let element2 = Math.floor(Math.random() * mergerItems.length);
+		let element1 = Math.floor(Math.random() * mergerItems.length);
+		let firstInnerText = document.getElementsByClassName("merger")[element1];
+		let secondInnerText = document.getElementsByClassName("merger")[element2];
+		if (mergerItems.length > 1) {
+			let temp = firstInnerText.innerHTML;
+			firstInnerText.innerHTML = secondInnerText.innerHTML;
+			secondInnerText.innerHTML = temp;
+		}
+}
+
 </script>
 </html>	

@@ -34,14 +34,23 @@
             console.log(reactTime);
         }
         function startTime() {
+            let countdown = Math.floor(Math.random() * 9) + 2
+            var y = countdown*1000
+        //     for(let i=0; i < 9; i++){
+        //         setTimeOut(() => {
+        //             document.getElementById("counter").innerHTML = i;
+
+        //         }, (8 - i) * 1000)
+        //     }
+        // }
             var i = 0;
-            while (i <= 8) {
+            while (i < 9) {
                 setTimeout(() => {
-                    document.getElementById("counter").innerHTML = "Count :" + i;
+                    document.getElementById("counter").innerHTML = + i;
                 }, (8 - i) * 1000);
                 i++;
 
-            }
+             }
             setTimeout(() => {
                 if (reactTime == undefined) {
                     document.getElementById("target").innerHTML = "Too Slow";

@@ -53,6 +53,8 @@
 
         <p id="help">Help report</p>
 
+        <button type="button" class="button" onclick="resetGame()">New Game</button>
+
         <br>
         <br>
 
@@ -165,11 +167,23 @@
             document.getElementById('help').textContent = text;
 
         }
-       
+
         document.getElementById("locations").textContent = "Number of locations checked is 0";
         document.getElementById("penalty").textContent = "penalty is 0";
         document.getElementById("help").textContent = "click for help";
 
+
+        function resetGame() {
+                treasureLocation = Math.floor(Math.random() * 25)
+                while(treasureLocation == 12) {
+                    treasureLocation = Math.floor(Math.random() * 25) }
+                chestCount = 0
+                penalty = 0
+                document.getElementById("locations").innerHTML = "Number of locations checked is Zero " + chestCount;
+                document.getElementById("penalty").innerHTML = "chestCount " + penalty;
+                for(let i = 0; i < 25; i++) {
+                    if(i != 12) {
+                        document.getElementById(ids[i]).src = "Treasure_hidden.jpg"}}}
 
 
     </script>
