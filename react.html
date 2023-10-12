@@ -12,7 +12,7 @@
 </head>
 <style>
     button {
-        background-color:blue;
+        background-color: blue;
     }
 </style>
 
@@ -28,29 +28,20 @@
 
 
     <script>
-        var reactTime = undefined;
+        let reactTime = undefined;
         function recordTime() {
             reactTime = Date.now();
             console.log(reactTime);
         }
+
         function startTime() {
-            let countdown = Math.floor(Math.random() * 9) + 2
-            var y = countdown*1000
-        //     for(let i=0; i < 9; i++){
-        //         setTimeOut(() => {
-        //             document.getElementById("counter").innerHTML = i;
-
-        //         }, (8 - i) * 1000)
-        //     }
-        // }
-            var i = 0;
-            while (i < 9) {
+           
+            for(let i=0; i < 9; i++){
                 setTimeout(() => {
-                    document.getElementById("counter").innerHTML = + i;
-                }, (8 - i) * 1000);
-                i++;
-
-             }
+                    document.getElementById("counter").innerHTML = i;
+                }, (8 - i) * 1000)
+            }
+        }
             setTimeout(() => {
                 if (reactTime == undefined) {
                     document.getElementById("target").innerHTML = "Too Slow";
@@ -60,7 +51,7 @@
                     document.getElementById("target").innerHTML = "Timewas " + (endTime - reactTime);
                 }
             }, 8000);
-        }
+        
 
     </script>
 
